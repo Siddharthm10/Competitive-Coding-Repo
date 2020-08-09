@@ -1,2 +1,1 @@
-# Leet_code_repo
-My Leet Code Journey
+My Competitive Coding Journey
