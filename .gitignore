@@ -2,3 +2,4 @@
 .vscode/tasks.json
 .templates/templates/base-template-cp/content
 .templates/templates/base-template-cp/meta.json
+.vscode/settings.json
