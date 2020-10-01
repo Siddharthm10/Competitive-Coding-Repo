@@ -1,2 +1,4 @@
 .vscode/launch.json
 .vscode/tasks.json
+.templates/templates/base-template-cp/content
+.templates/templates/base-template-cp/meta.json
