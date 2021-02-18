@@ -1,1 +1,3 @@
-My Competitive Coding Journey
+# My Competitive Coding Journey
+This repository contains my coding problem solving journey.
+
