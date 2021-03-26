@@ -1,8 +1,2 @@
-.vscode/launch.json
-.vscode/tasks.json
-.templates/templates/base-template-cp/content
-.templates/templates/base-template-cp/meta.json
-.vscode/settings.json
-CodeForces/800/.vscode/launch.json
-CodeForces/800/.vscode/settings.json
-CodeForces/800/.vscode/tasks.json
+.vscode/*
+.templates/*
