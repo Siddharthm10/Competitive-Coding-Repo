@@ -11,19 +11,17 @@
  */
 class Solution {
 public:
-	TreeNode* construct(vector<int> &nums, int l, int r){
-		if(r>l){
-			int middle = (r+l)/2 -l;
-	        TreeNode* root = new TreeNode(nums[middle]);
-	        root->right = construct(nums, middle+1, r);
-	        root->left = construct(nums, l, middle-1);
-	        return root;
+	TreeNode* conversion(vector<int> &nums, int start, int end){
+		if(start<=end){
+			int middle = start + (end - start)/2;
+			TreeNode* root = new TreeNode(nums[middle]);
+			root->left = conversion(nums, start, middle-1);
+			root->right = conversion(nums, middle+1, end);
+			return root;
 		}
-		return NULL;
 	}
+
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        //Choose the middle of the sorted array
-        //Using binary search's concept ;-)
-        return construct(nums, 0, nums.size()-1);
+        return conversion(nums, 0, nums.size()-1);
     }
 };
