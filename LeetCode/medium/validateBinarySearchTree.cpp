@@ -18,6 +18,22 @@
  */
 class Solution {
 public:
+    bool helper(TreeNode* root, TreeNode* min, TreeNode* max){
+        if(!root) return true;
+        if((!min||root->val>min->val )&&(!max||root->val<max->val))
+        {
+            return helper(root->left, root, min)&&helper(root->right, max, root);
+        }
+        return false;
+    }
+    bool isValidBST(TreeNode* root) {
+        return helper(root, NULL, NULL);
+    }
+};
+// @lc code=end
+
+class Solution {
+public:
     bool rightHelper(TreeNode* root, int x){
         if(!root) return true;
         if(root->val<=x) return false;
@@ -37,5 +53,3 @@ public:
             return (isValidBST(root->left)&&isValidBST(root->right));
     }
 };
-// @lc code=end
-
