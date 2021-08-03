@@ -1,23 +1,23 @@
-//"It's not a bug, It's a feature
-#include <bits/stdc++.h>
-#include <vector>
-#include <stdio.h>
-#include <iostream>
-#define pi 3.1415926535
-#define fu(i, n, j) for (int j = i; j < n; j++)
-#define fd(i, n, j) for (int j = i; j >= 0; j--)
-
-using namespace std;
-
-int *nextGreaterElement(int *arr)
+class Solution
 {
-    int ans[4];
-    cur
-}
-
-int main()
-{
-    int arr[] = {4, 5, 2, 25};
-
-    return 0;
-}
+    public:
+    //Function to find the next greater element for each element of the array.
+    vector<long long> nextLargerElement(vector<long long> arr, int n){
+        // Your code here
+        // vector<long long> ans(n);
+        stack<long long> st;
+        st.push(0);
+        for(int i=1; i<n; i++){
+            while(!st.empty()&&arr[i]>arr[st.top()]){
+                arr[st.top()] = arr[i];
+                st.pop();
+            }
+            st.push(i);
+        }
+        while(!st.empty()){
+            arr[st.top()] = -1;
+            st.pop();
+        }
+        return arr;
+    }
+};
