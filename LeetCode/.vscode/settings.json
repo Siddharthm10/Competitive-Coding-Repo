@@ -10,6 +10,10 @@
         "list": "cpp",
         "string_view": "cpp",
         "any": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp"
     }
 }
