@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode id=53 lang=cpp
+ *
+ * [53] Maximum Subarray
+ */
+
+// @lc code=start
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
@@ -9,5 +16,8 @@ public:
             if(sum<0) sum=0;
         }
         return result;
+        
     }
 };
+// @lc code=end
+
