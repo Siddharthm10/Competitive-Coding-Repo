@@ -1,4 +1,5 @@
 .vscode/*
+.cph
 .templates/*
 input.txt
 output.txt

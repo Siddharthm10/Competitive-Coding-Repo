@@ -1,0 +1,116 @@
+// clang-format off
+ 
+#include <bits/stdc++.h>
+#define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+ 
+using namespace std;
+using namespace chrono;
+ 
+ 
+#define ll long long
+#define ull unsigned long long
+#define ld long double
+#define fi first
+#define se second
+#define mp make_pair
+#define pb push_back
+#define pll pair<long long, long long>
+#define nline "\n"
+#define all(a) a.begin(), a.end()
+ 
+#ifndef ONLINE_JUDGE
+#define debug(x) cerr << #x << " "; _print(x); cerr << endl;
+#else
+#define debug(x)
+#endif
+ 
+void _print(int a){cerr << a; }
+void _print(ll a) {cerr << a;}
+void _print(ull a) {cerr << a;}
+void _print(string a) {cerr << a;}
+void _print(bool a) {cerr << a;}
+void _print(char a) {cerr << a;}
+void _print(ld a) {cerr << a;}
+ 
+template <class T, class V> void _print(pair <T, V> p);
+template <class T> void _print(vector <T> v);
+template <class T> void _print(set <T> v);
+template <class T, class V> void _print(map <T, V> v);
+template <class T> void _print(multiset <T> v);
+template <class T, class V> void _print(pair <T, V> p) {cerr << "{"; _print(p.fi); cerr << ","; _print(p.se); cerr << "}\n";}
+template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]\n";}
+template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]\n";}
+template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]\n";}
+template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]\n";}
+ 
+const ll MOD = 1000000007;
+const ll INF = 1e18;
+const ld PI = 3.141592653589793238462;
+ 
+// clang-format on
+ 
+void solve()
+{
+    int t;
+    cin>>t;
+    while(t--){
+    	int n; 
+    	cin>>n;
+    	ll a[n];
+    	for(int i=0; i<n; i++) cin>>a[i];
+
+    	if(n%2==0){
+
+    		ll evenMin = a[0], oddMin = a[1];
+    		int evenIdx = 0, oddIdx = 1;
+    		for(int i=2; i<n; i++){
+    			if(i%2==0 && evenMin>a[i]) {
+    				evenMin = a[i];
+    				evenIdx = i;
+    			}
+    			else if(i%2==1 && oddMin>a[i]){
+    				oddMin = a[i];
+    				oddIdx = i;
+    			}
+    		}
+
+    		ll even = evenMin + evenIdx/2;
+    		ll odd = oddMin + oddIdx/2;
+    		cerr<<even<<" "<<odd<<"\n";
+    		if(evenMin>oddMin) cout<<"Mike\n";
+    		else if(evenMin<oddMin) cout<<"Joe\n";
+    		else {
+    			if(evenIdx/2 > oddIdx/2){
+    				cout<<"Mike\n";
+    			} else if(evenIdx/2 < oddIdx/2){
+    				cout<<"Joe\n";
+    			} else{
+    				cout<<"Joe\n";
+    			}
+    		}
+
+    	}else{
+    		cout<<"Mike\n";
+
+    	}
+    }
+}
+ 
+int main()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    freopen("error.txt", "w", stderr);
+#endif
+    fastio();
+    auto start1 = high_resolution_clock::now();
+    solve();
+    auto stop1 = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop1 - start1);
+#ifndef ONLINE_JUDGE
+    cerr << "Time: " << duration.count() / 1000 << endl;
+#endif
+ 
+    return 0;
+}
